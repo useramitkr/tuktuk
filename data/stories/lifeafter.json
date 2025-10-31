@@ -1,0 +1,89 @@
+{
+  "story": {
+    "id": "s2",
+    "category": "Love",
+    "title": "Life After",
+    "description": "It's been three days since Mark left. The silence is the loudest thing in the apartment.",
+    "rating": 4.5,
+    "image": "https://placehold.co/300x400/5c5c7a/e0e0e0?text=Life+After"
+  },
+  "characters": {
+    "0": { "name": "Maya", "isSelf": true },
+    "1_chloe": { "name": "Chloe", "isSelf": false },
+    "2_system": { "name": "Narrator", "isSelf": false }
+  },
+  "storyData": {
+    "s2": {
+      "firstMessage": "s2_m1",
+      "messageMap": {
+        "s2_m1": { "_id": "s2_m1", "user": "1_chloe", "text": "Hey. Just checking in. How are you holding up?", "next": "s2_m2" },
+        "s2_m2": { "_id": "s2_m2", "user": "1_chloe", "text": "And don't you dare say 'fine'.", "next": "s2_m3" },
+        "s2_m3": { "_id": "s2_m3", "user": 0, "text": "That bad, huh? It's... quiet.", "next": "s2_m4" },
+        "s2_m4": { "_id": "s2_m4", "user": 0, "text": "I keep thinking I hear his keys in the door.", "next": "s2_m5" },
+        "s2_m5": { "_id": "s2_m5", "user": "1_chloe", "text": "Oh, hon. That's the worst part. The phantom limbs.", "next": "s2_m6" },
+        "s2_m6": { "_id": "s2_m6", "user": "1_chloe", "text": "What are you doing for dinner?", "next": "s2_m7" },
+        "s2_m7": { "_id": "s2_m7", "user": 0, "text": "Probably just... nothing. Not really hungry.", "next": "s2_m8" },
+        "s2_m8": { "_id": "s2_m8", "user": "1_chloe", "text": "Nope. Not acceptable. I'm ordering you Thai. Pad see ew and extra spring rolls. 20 mins.", "next": "s2_m9" },
+        "s2_m9": { "_id": "s2_m9", "user": 0, "text": "You don't have to do that.", "next": "s2_m10" },
+        "s2_m10": { "_id": "s2_m10", "user": "1_chloe", "text": "Too late, already did. You can't survive on tea and sadness. Eat something.", "next": "s2_m11" },
+        "s2_m11": { "_id": "s2_m11", "user": 0, "text": "Okay. Thanks, Chloe. Really.", "next": "s2_m12" },
+        "s2_m12": { "_id": "s2_m12", "user": "2_system", "text": "An hour later. The food is gone. The empty containers sit on the coffee table.", "next": "s2_m13" },
+        "s2_m13": { "_id": "s2_m13", "user": "2_system", "text": "You see his favorite mug by the sink.", "next": "s2_m14" },
+        "s2_m14": { "_id": "s2_m14", "user": "2_system", "text": "And his toothbrush still in the holder.", "next": "s2_m15" },
+        "s2_m15": { "_id": "s2_m15", "user": 0, "text": "It's stupid. Why am I crying over a toothbrush?", "next": "s2_m16" },
+        "s2_m16": { "_id": "s2_m16", "user": "1_chloe", "text": "You're not. You're crying because it's over.", "next": "s2_m17" },
+        "s2_m17": { "_id": "s2_m17", "user": "1_chloe", "text": "It's okay to be a mess. You've got about a week of 'crying over household items' quota. Use it.", "next": "s2_m18" },
+        "s2_m18": { "_id": "s2_m18", "user": 0, "text": "Haha. Thanks. What do I do now? The whole weekend is just... empty.", "next": "s2_m19" },
+        "s2_m19": { "_id": "s2_m19", "user": "1_chloe", "text": "Step 1: Get all his stuff. All of it. Toothbrush, mug, that stupid band t-shirt you hate.", "next": "s2_m20" },
+        "s2_m20": { "_id": "s2_m20", "user": "1_chloe", "text": "Put it in a box. Put the box in the closet. We'll deal with it later.", "next": "s2_m21" },
+        "s2_m21": { "_id": "s2_m21", "user": 0, "text": "Okay. I can do that.", "next": "s2_m22" },
+        "s2_m22": { "_id": "s2_m22", "user": "2_system", "text": "You walk into the bedroom. His cologne hangs in the air.", "next": "s2_m23" },
+        "s2_m23": { "_id": "s2_m23", "user": "2_system", "text": "You grab the box. You start filling it.", "next": "s2_m24" },
+        "s2_m24": { "_id": "s2_m24", "user": "2_system", "text": "Then you see it. His phone charger, still plugged in by the bed.", "next": "s2_m25" },
+        "s2_m25": { "_id": "s2_m25", "user": "2_system", "text": "You pick up your own phone. The urge is overwhelming.", "next": "s2_m26" },
+        "s2_m26": { "_id": "s2_m26", "user": 0, "text": "Chloe... I really want to text him.", "next": "s2_m27" },
+        "s2_m27": { "_id": "s2_m27", "user": 0, "text": "Just to... I don't know. To see if he's hurting too.", "next": "s2_m28" },
+        "s2_m28": { "_id": "s2_m28", "user": "1_chloe", "text": "Maya. Don't.", "next": "s2_m29" },
+        "s2_m29": { "_id": "s2_m29", "user": "1_chloe", "text": "What good will it do? If he is, you'll both just be sad. If he isn't, you'll feel worse.", "next": "s2_m30" },
+        "s2_m30": { "_id": "s2_m30", "user": "1_chloe", "text": "It's like picking a scab. Let it heal.", "next": "s2_m31" },
+        "s2_m31": { "_id": "s2_m31", "user": "2_system", "text": "Your thumb hovers over his name. 'Mark 💔'", "next": "s2_m32" },
+        "s2_m32": {
+          "_id": "s2_m32", "user": "2_system", "text": "What do you do?",
+          "options": [
+            { "text": "Put the phone down.", "next": "s2_m33a" },
+            { "text": "Text him: 'I miss you.'", "next": "s2_m33b" }
+          ]
+        },
+        "s2_m33a": { "_id": "s2_m33a", "user": 0, "text": "You're right. You're right.", "next": "s2_m34a" },
+        "s2_m34a": { "_id": "s2_m34a", "user": 0, "text": "I'm putting the phone in the kitchen.", "next": "s2_m35a" },
+        "s2_m35a": { "_id": "s2_m35a", "user": "2_system", "text": "You plug your phone in across the room. And you finish filling the box.", "next": "s2_m36a" },
+        "s2_m36a": { "_id": "s2_m36a", "user": "2_system", "text": "It's heavy.", "next": "s2_m37a" },
+        "s2_m37a": { "_id": "s2_m37a", "user": 0, "text": "Okay. The box is full. It's in the closet.", "next": "s2_m38a" },
+        "s2_m38a": { "_id": "s2_m38a", "user": "1_chloe", "text": "NICE. That's the hardest part. I'm proud of you.", "next": "s2_m39a" },
+        "s2_m39a": { "_id": "s2_m39a", "user": "1_chloe", "text": "Now, for step 2.", "next": "s2_m40a" },
+        "s2_m40a": { "_id": "s2_m40a", "user": 0, "text": "Step 2?", "next": "s2_m41a" },
+        "s2_m41a": { "_id": "s2_m41a", "user": "1_chloe", "text": "Step 2 is you put on real pants, and we're going to that ridiculously expensive cocktail bar you love.", "next": "s2_m42a" },
+        "s2_m42a": { "_id": "s2_m42a", "user": "1_chloe", "text": "Mark HATED that place. Which is exactly why we're going.", "next": "s2_m43a" },
+        "s2_m43a": { "_id": "s2_m43a", "user": 0, "text": "...", "next": "s2_m44a" },
+        "s2_m44a": { "_id": "s2_m44a", "user": 0, "text": "Okay. Let me find my shoes.", "next": "s2_m45a" },
+        "s2_m45a": { "_id": "s2_m45a", "user": "2_system", "text": "[END OF STORY]" },
+        "s2_m33b": { "_id": "s2_m33b", "user": 0, "text": "I'm sorry. I have to.", "next": "s2_m34b" },
+        "s2_m34b": { "_id": "s2_m34b", "user": 0, "text": "Sent: 'I miss you.'", "next": "s2_m35b" },
+        "s2_m35b": { "_id": "s2_m35b", "user": "1_chloe", "text": "Maya...", "next": "s2_m36b" },
+        "s2_m36b": { "_id": "s2_m36b", "user": "2_system", "text": "...", "next": "s2_m37b" },
+        "s2_m37b": { "_id": "s2_m37b", "user": "2_system", "text": "Typing...", "next": "s2_m38b" },
+        "s2_m38b": { "_id": "s2_m38b", "user": "2_system", "text": "...", "next": "s2_m39b" },
+        "s2_m39b": { "_id": "s2_m39b", "user": "2_system", "text": "Received: 'I miss parts of it too. But we can't. I'm sorry.'", "next": "s2_m40b" },
+        "s2_m40b": { "_id": "s2_m40b", "user": 2, "text": "The reply is cold. Clinical. Final.", "next": "s2_m41b" },
+        "s2_m41b": { "_id": "s2_m41b", "user": 0, "text": "He's... right. Wow. That hurt.", "next": "s2_m42b" },
+        "s2_m42b": { "_id": "s2_m42b", "user": 0, "text": "But... it's real. It's done.", "next": "s2_m43b" },
+        "s2_m43b": { "_id": "s2_m43b", "user": "1_chloe", "text": "I know it stings. But now you know. No more wondering.", "next": "s2_m44b" },
+        "s2_m44b": { "_id": "s2_m44b", "user": "1_chloe", "text": "Now, block his number. And let's go get a drink.", "next": "s2_m45b" },
+        "s2_m45b": { "_id": "s2_m45b", "user": 0, "text": "...", "next": "s2_m46b" },
+        "s2_m46b": { "_id": "s2_m46b", "user": 0, "text": "Okay. Blocking him now. And yes. I need that drink.", "next": "s2_m47b" },
+        "s2_m47b": { "_id": "s2_m47b", "user": "2_system", "text": "[END OF STORY]" }
+      }
+    }
+  }
+}
+

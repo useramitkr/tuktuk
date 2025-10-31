@@ -1,0 +1,84 @@
+{
+  "story": {
+    "id": "s4",
+    "category": "Comedy",
+    "title": "Grandma's New Phone",
+    "description": "Your friend Sam is trying to teach their Grandma how to use a smartphone. You're their emotional support.",
+    "rating": 4.9,
+    "image": "https://placehold.co/300x400/f0e68c/333?text=HELP"
+  },
+  "characters": {
+    "0": { "name": "You", "isSelf": true },
+    "1_sam": { "name": "Sam", "isSelf": false },
+    "2_system": { "name": "Narrator", "isSelf": false },
+    "3_grandma": { "name": "Grandma", "isSelf": false }
+  },
+  "storyData": {
+    "s4": {
+      "firstMessage": "s4_m1",
+      "messageMap": {
+        "s4_m1": { "_id": "s4_m1", "user": "1_sam", "text": "DUDE.", "next": "s4_m2" },
+        "s4_m2": { "_id": "s4_m2", "user": "1_sam", "text": "I've made a terrible, terrible mistake.", "next": "s4_m3" },
+        "s4_m3": { "_id": "s4_m3", "user": "0", "text": "It's 10 AM on a Saturday. What did you do? Adopt another cat?", "next": "s4_m4" },
+        "s4_m4": { "_id": "s4_m4", "user": "1_sam", "text": "Worse. I bought Grandma a smartphone.", "next": "s4_m5" },
+        "s4_m5": { "_id": "s4_m5", "user": "1_sam", "text": "I'm trying to teach her how to video chat.", "next": "s4_m6" },
+        "s4_m6": { "_id": "s4_m6", "user": "0", "text": "Oh no. Sam. Why would you do that to yourself?", "next": "s4_m7" },
+        "s4_m7": { "_id": "s4_m7", "user": "1_sam", "text": "She said she wanted to 'see the grandkids'!", "next": "s4_m8" },
+        "s4_m8": { "_id": "s4_m8", "user": "1_sam", "text": "She's trying to answer my video call now. Hold on.", "next": "s4_m9" },
+        "s4_m9": { "_id": "s4_m9", "user": "2_system", "text": "...", "next": "s4_m10" },
+        "s4_m10": { "_id": "s4_m10", "user": "1_sam", "text": "Okay, she picked up. But I think she's holding the phone upside down.", "next": "s4_m11" },
+        "s4_m11": { "_id": "s4_m11", "user": "1_sam", "text": "All I can see is the ceiling fan.", "next": "s4_m12" },
+        "s4_m12": { "_id": "s4_m12", "user": "3_grandma", "text": "(muffled) SAM? SAMMY? CAN YOU HEAR ME?", "next": "s4_m13" },
+        "s4_m13": { "_id": "s4_m13", "user": "1_sam", "text": "GRANDMA, I CAN HEAR YOU! FLIP THE PHONE!", "next": "s4_m14" },
+        "s4_m14": { "_id": "s4_m14", "user": "2_system", "text": "The video feed spins wildly.", "next": "s4_m15" },
+        "s4_m15": { "_id": "s4_m15", "user": "1_sam", "text": "OKAY, now it's just a blurry shot of her chin.", "next": "s4_m16" },
+        "s4_m16": { "_id": "s4_m16", "user": "3_grandma", "text": "(muffled) IT'S NOT WORKING, SAMMY. I'M PRESSING THE BUTTON.", "next": "s4_m17" },
+        "s4_m17": { "_id": "s4_m17", "user": "1_sam", "text": "WHICH BUTTON?!", "next": "s4_m18" },
+        "s4_m18": { "_id": "s4_m18", "user": "2_system", "text": "Sam has sent you an image.", "next": "s4_m19" },
+        "s4_m19": { "_id": "s4_m19", "user": "1_sam", "image": "https://placehold.co/400x300/bcaaa4/333?text=IS+THIS+IT%3F", "text": "This is my view. I think this is her left nostril.", "next": "s4_m20" },
+        "s4_m20": { "_id": "s4_m20", "user": "0", "text": "HAHAHA. This is art. Frame it.", "next": "s4_m21" },
+        "s4_m21": { "_id": "s4_m21", "user": "1_sam", "text": "Don't laugh. She hung up. She's trying to text me now.", "next": "s4_m22" },
+        "s4_m22": { "_id": "s4_m22", "user": "2_system", "text": "...", "next": "s4_m23" },
+        "s4_m23": { "_id": "s4_m23", "user": "3_grandma", "text": "Sammy dear i made you a pie", "next": "s4_m24" },
+        "s4_m24": { "_id": "s4_m24", "user": "1_sam", "text": "Aw, that's sweet.", "next": "s4_m25" },
+        "s4_m25": { "_id": "s4_m25", "user": "3_grandma", "text": "how do i send it on the line", "next": "s4_m26" },
+        "s4_m26": { "_id": "s4_m26", "user": "1_sam", "text": "Grandma, you can't send a pie over text.", "next": "s4_m27" },
+        "s4_m27": { "_id": "s4_m27", "user": "3_grandma", "text": "Nonsense. Your aunt Susan sends me pictures of her cat.", "next": "s4_m28" },
+        "s4_m28": { "_id": "s4_m28", "user": "3_grandma", "text": "Hold on. I'll use the picture button.", "next": "s4_m29" },
+        "s4_m29": { "_id": "s4_m29", "user": "1_sam", "text": "Oh god. Here we go.", "next": "s4_m30" },
+        "s4_m30": { "_id": "s4_m30", "user": "2_system", "text": "Grandma has sent an image.", "next": "s4_m31" },
+        "s4_m31": { "_id": "s4_m31", "user": "3_grandma", "image": "https://placehold.co/400x300/5d4037/fff?text=Mr.+BoJangles", "next": "s4_m32" },
+        "s4_m32": { "_id": "s4_m32", "user": "1_sam", "text": "Grandma, that's your cat.", "next": "s4_m33" },
+        "s4_m33": { "_id": "s4_m33", "user": "3_grandma", "text": "Yes. He is a handsome boy.", "next": "s4_m34" },
+        "s4_m34": { "_id": "s4_m34", "user": "1_sam", "text": "You were supposed to send the PIE.", "next": "s4_m35" },
+        "s4_m35": { "_id": "s4_m35", "user": "3_grandma", "text": "Oh. I ate the pie. It was good.", "next": "s4_m36" },
+        "s4_m36": { "_id": "s4_m36", "user": "0", "text": "I'm dying. This is the best.", "next": "s4_m37" },
+        "s4_m37": { "_id": "s4_m37", "user": "1_sam", "text": "I give up. I'm just glad she can text. I'm telling her to put it away.", "next": "s4_m38" },
+        "s4_m38": { "_id": "s4_m38", "user": "1_sam", "text": "Grandma, great job. Let's take a break.", "next": "s4_m39" },
+        "s4_m39": { "_id": "s4_m39", "user": "3_grandma", "text": "OKAY DEAR. I AM GOING TO THE FACE-BOOK.", "next": "s4_m40" },
+        "s4_m40": { "_id": "s4_m40", "user": "1_sam", "text": "Wait... how did you get on Facebook?", "next": "s4_m41" },
+        "s4_m41": { "_id": "s4_m41", "user": "2_system", "text": "Sam has sent you an image.", "next": "s4_m42" },
+        "s4_m42": { "_id": "s4_m42", "user": "1_sam", "image": "https://placehold.co/300x500/fff/000?text=I+CAN+READ+IT+NOW", "text": "She sent me this. She found the 'large text' setting.", "next": "s4_m43" },
+        "s4_m43": { "_id": "s4_m43", "user": "1_sam", "text": "The entire phone is just one word at a time.", "next": "s4_m44" },
+        "s4_m44": { "_id": "s4_m44", "user": "0", "text": "She's too powerful. You've created a monster.", "next": "s4_m45" },
+        "s4_m45": { "_id": "s4_m45", "user": "1_sam", "text": "She just posted 'CORN' on my wall. Just 'CORN'.", "next": "s4_m46" },
+        "s4_m46": { "_id": "s4_m46", "user": "1_sam", "text": "I'm going back to bed. This was a bad idea.", "next": "s4_m47" },
+        "s4_m47": {
+          "_id": "s4_m47", "user": "2_system", "text": "What do you reply?",
+          "options": [
+            { "text": "Offer to help Sam.", "next": "s4_m48a" },
+            { "text": "Tell Sam to buy her an iPad.", "next": "s4_m48b" }
+          ]
+        },
+        "s4_m48a": { "_id": "s4_m48a", "user": "0", "text": "Want me to come over? We can tag-team this.", "next": "s4_m49a" },
+        "s4_m49a": { "_id": "s4_m49a", "user": "1_sam", "text": "YES. PLEASE. Bring coffee. And maybe a helmet.", "next": "s4_m50a" },
+        "s4_m50a": { "_id": "s4_m50a", "user": "2_system", "text": "[END OF STORY]" },
+        "s4_m48b": { "_id": "s4_m48b", "user": "0", "text": "You know... an iPad is just a really big phone...", "next": "s4_m49b" },
+        "s4_m49b": { "_id": "s4_m49b", "user": "1_sam", "text": "Don't you DARE put that idea into the universe.", "next": "s4_m50b" },
+        "s4_m50b": { "_id": "s4_m50b", "user": "1_sam", "text": "She'll be texting with her elbows. I can't.", "next": "s4_m51b" },
+        "s4_m51b": { "_id": "s4_m51b", "user": "2_system", "text": "[END OF STORY]" }
+      }
+    }
+  }
+}
+

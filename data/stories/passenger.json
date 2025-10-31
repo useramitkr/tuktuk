@@ -1,0 +1,77 @@
+{
+  "story": {
+    "id": "s3",
+    "category": "Horror",
+    "title": "The 4:05 AM Passenger",
+    "description": "You're a night-shift ride-share driver. Your last ping of the night is from an abandoned industrial park. And it's 4:05 AM.",
+    "rating": 4.8,
+    "image": "https://placehold.co/300x400/33334d/e0e0e0?text=4:05+AM"
+  },
+  "characters": {
+    "0": { "name": "Driver", "isSelf": true },
+    "1_elias": { "name": "Elias", "isSelf": false },
+    "2_system": { "name": "Narrator", "isSelf": false },
+    "3_dispatch": { "name": "Dispatch", "isSelf": false }
+  },
+  "storyData": {
+    "s3": {
+      "firstMessage": "s3_m1",
+      "messageMap": {
+        "s3_m1": { "_id": "s3_m1", "user": "3_dispatch", "text": "*BEEP* New ride request: 1400 S. Ruston St.", "next": "s3_m2" },
+        "s3_m2": { "_id": "s3_m2", "user": "2_system", "text": "4:05 AM. Your last ride of the night. You sigh and accept.", "next": "s3_m3" },
+        "s3_m3": { "_id": "s3_m3", "user": "0", "text": "Ruston Street? That's just warehouses.", "next": "s3_m4" },
+        "s3_m4": { "_id": "s3_m4", "user": "2_system", "text": "You pull up. The street is dead silent, lit by one flickering lamppost.", "next": "s3_m5" },
+        "s3_m5": { "_id": "s3_m5", "user": "2_system", "text": "A man steps out of the shadows. He's wearing a suit, no tie, and looks exhausted.", "next": "s3_m6" },
+        "s3_m6": { "_id": "s3_m6", "user": "1_elias", "text": "...", "next": "s3_m7" },
+        "s3_m7": { "_id": "s3_m7", "user": "2_system", "text": "He gets in the back. He's holding a heavy, locked metal briefcase.", "next": "s3_m8" },
+        "s3_m8": { "_id": "s3_m8", "user": "0", "text": "Morning. Where are we headed?", "next": "s3_m9" },
+        "s3_m9": { "_id": "s3_m9", "user": "1_elias", "text": "The Miller's Point bridge. Middle of the bridge. Just stop there.", "next": "s3_m10" },
+        "s3_m10": { "_id": "s3_m10", "user": "0", "text": "The bridge? Not... an address?", "next": "s3_m11" },
+        "s3_m11": { "_id": "s3_m11", "user": "1_elias", "text": "Just the bridge. Please. And hurry.", "next": "s3_m12" },
+        "s3_m12": { "_id": "s3_m12", "user": "2_system", "text": "You start driving. The only sound is the hum of the engine. You keep glancing at him in the rearview mirror.", "next": "s3_m13" },
+        "s3_m13": { "_id": "s3_m13", "user": "2_system", "text": "His knuckles are white on the handle of the briefcase.", "next": "s3_m14" },
+        "s3_m14": { "_id": "s3_m14", "user": "1_elias", "text": "Can you go faster?", "next": "s3_m15" },
+        "s3_m15": { "_id": "s3_m15", "user": "0", "text": "Doing my best. Not much traffic this time of night.", "next": "s3_m16" },
+        "s3_m16": { "_id": "s3_m16", "user": "2_system", "text": "Your dispatch phone buzzes. A private message from the company.", "next": "s3_m17" },
+        "s3_m17": { "_id": "s3_m17", "user": "3_dispatch", "text": "URGENT: Passenger ELIAS VANCE reported missing 1hr ago from 1400 S. Ruston.", "next": "s3_m18" },
+        "s3_m18": { "_id": "s3_m18", "user": "3_dispatch", "text": "Considered unstable. Do NOT proceed to destination. Drive to nearest police station.", "next": "s3_m19" },
+        "s3_m19": { "_id": "s3_m19", "user": "3_dispatch", "text": "Confirm receipt. Acknowledge now.", "next": "s3_m20" },
+        "s3_m20": { "_id": "s3_m20", "user": "2_system", "text": "You feel a cold knot in your stomach. The passenger leans forward. He saw the message on your screen.", "next": "s3_m21" },
+        "s3_m21": { "_id": "s3_m21", "user": "1_elias", "text": "Don't listen to them.", "next": "s3_m22" },
+        "s3_m22": { "_id": "s3_m22", "user": "1_elias", "text": "Please. They're lying. The people who reported me 'missing' are the ones I'm running from.", "next": "s3_m23" },
+        "s3_m23": { "_id": "s3_m23", "user": 0, "text": "What... what is going on?", "next": "s3_m24" },
+        "s3_m24": { "_id": "s3_m24", "user": "1_elias", "text": "That case... it's not what they think. It's proof. It's... a failsafe.", "next": "s3_m25" },
+        "s3_m25": { "_id": "s3_m25", "user": "1_elias", "text": "If I go to the police, they'll get it. And it'll be all over.", "next": "s3_m26" },
+        "s3_m26": { "_id": "s3_m26", "user": "1_elias", "text": "Just get me to the bridge. I'll double your fare. Triple it. Please.", "next": "s3_m27" },
+        "s3_m27": { "_id": "s3_m27", "user": "2_system", "text": "You're at a cross-street. Left goes to the police station. Right goes to the bridge.", "next": "s3_m28" },
+        "s3_m28": {
+          "_id": "s3_m28", "user": "2_system", "text": "You have to choose.",
+          "options": [
+            { "text": "Trust dispatch. Turn left.", "next": "s3_m29a" },
+            { "text": "Trust the passenger. Turn right.", "next": "s3_m29b" }
+          ]
+        },
+        "s3_m29a": { "_id": "s3_m29a", "user": "0", "text": "I'm sorry. I have to follow protocol. I'm taking you to the station.", "next": "s3_m30a" },
+        "s3_m30a": { "_id": "s3_m30a", "user": "1_elias", "text": "No... no, you don't understand.", "next": "s3_m31a" },
+        "s3_m31a": { "_id": "s3_m31a", "user": "1_elias", "text": "You just doomed us all.", "next": "s3_m32a" },
+        "s3_m32a": { "_id": "s3_m32a", "user": "2_system", "text": "You pull into the police station's floodlit sally port. Two men in dark suits are already waiting.", "next": "s3_m33a" },
+        "s3_m33a": { "_id": "s3_m33a", "user": "2_system", "text": "They don't look like cops.", "next": "s3_m34a" },
+        "s3_m34a": { "_id": "s3_m34a", "user": "2_system", "text": "They open Elias's door, take the briefcase, and lead him away. He doesn't struggle.", "next": "s3_m35a" },
+        "s3_m35a": { "_id": "s3_m35a", "user": "2_system", "text": "One of them looks at you. 'You did the right thing. Forget this ride ever happened.'", "next": "s3_m36a" },
+        "s3_m36a": { "_id": "s3_m36a", "user": "2_system", "text": "[END OF STORY]" },
+        "s3_m29b": { "_id": "s3_m29b", "user": "0", "text": "Okay. The bridge it is. But this is crazy.", "next": "s3_m30b" },
+        "s3_m30b": { "_id": "s3_m30b", "user": "1_elias", "text": "Thank you. Thank you. You have no idea.", "next": "s3_m31b" },
+        "s3_m31b": { "_id": "s3_m31b", "user": "2_system", "text": "You pull onto the empty bridge. Fog is rolling in from the river.", "next": "s3_m32b" },
+        "s3_m32b": { "_id": "s3_m32b", "user": "0", "text": "This is the middle. Now what?", "next": "s3_m33b" },
+        "s3_m33b": { "_id": "s3_m33b", "user": "1_elias", "text": "Now, you leave. And you forget this.", "next": "s3_m34b" },
+        "s3_m34b": { "_id": "s3_m34b", "user": "2_system", "text": "He gets out, holding the case. He places a small, strange-looking coin on your passenger seat.", "next": "s3_m35b" },
+        "s3_m35b": { "_id": "s3_m35b", "user": "1_elias", "text": "For your trouble. It'll... keep you safe.", "next": "s3_m36b" },
+        "s3_m36b": { "_id": "s3_m36b", "user": "2_system", "text": "You watch in your mirror as he walks to the exact center of the bridge.", "next": "s3_m37b" },
+        "s3_m37b": { "_id": "s3_m37b", "user": "2_system", "text": "He looks down at the water... and he isn't there anymore.", "next": "s3_m38b" },
+        "s3_m38b": { "_id": "s3_m38b", "user": "2_system", "text": "Not a jump. Just... gone.", "next": "s3_m39b" },
+        "s3_m39b": { "_id": "s3_m39b", "user": "2_system", "text": "[END OF STORY]" }
+      }
+    }
+  }
+}
+
