@@ -1,42 +1,51 @@
 //
 // 📍 DESTINATION: app/story-player.tsx
 //
-// ℹ️ DETAILS: This is a new file.
-// PURPOSE: This screen plays the selected story.
+// ℹ️ DETAILS: This file has been MODIFIED to fix your chat logic and add new features.
 //
-// 1.  It uses `useLocalSearchParams` to get the `storyId` passed from the
-//     home screen's <Link> component.
-// 2.  It uses `storiesById` from `data/stories/index.ts` to find the
-//     correct story data.
-// 3.  It uses `useState` to track the `currentMessageId` and the
-//     list of `displayedMessages`.
-// 4.  The entire screen is a `Pressable` (wrapped in `SafeAreaView`).
-//     Tapping it advances the story to the `next` message.
-// 5.  If a message has `options`, it displays buttons instead, and
-//     tapping the screen does nothing until an option is chosen.
-// 6.  It renders messages from "self" on the right and others on the left.
+// 1.  **FIX (Chat Scrolling):** The `inverted` FlatList was correct, but new messages
+//     were being added to the *end* of the array (`[...prev, newMessage]`).
+//     For an inverted list, they must be added to the *beginning*
+//     (`[newMessage, ...prev]`). This stops the list from "jumping"
+//     to the top and makes new messages appear at the bottom, as you wanted.
 //
-// ❗ FIX: Changed alias paths (`@/components...`, `@/data...`) to
-// relative paths (`../components...`, `../data...`) to fix
-// bundler resolution errors.
+// 2.  **FEATURE (End of Story):** Added a state `storyEnded`. This is set to `true`
+//     when a message has no `next` or `options`.
+//
+// 3.  **FEATURE (Blinking Footer):**
+//     - Added an `Animated.Text` component.
+//     - If `storyEnded` is true, it shows "The End".
+//     - If the story is not ended AND `canAdvance` is true, it shows a
+//       blinking "Tap to show next chat" prompt.
+//     - If there are options, it shows nothing.
+//
+// 4.  **FIX (Navigation):** Tapping the screen now checks for `storyEnded`.
+//     - If the story is over, tapping the screen will navigate back.
+//     - If the story is not over, it advances the chat.
+//
+// 5.  **FIX (Imports):** Changed relative import paths (`../`) to
+//     use the TypeScript path aliases (`@/`) defined in your tsconfig.json
+//     to resolve the compilation errors.
 //
 // -----------------------------------------------------------------------------
 
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   View,
   StyleSheet,
   Pressable,
   FlatList,
   Image,
-  Button,
   useWindowDimensions,
+  Animated,
+  Easing,
 } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
-import { ThemedText } from '../components/themed-text';
-import { ThemedView } from '../components/themed-view';
-import { storiesById } from '../data/stories';
-import { Character, Message, MessageOption, StoryFile } from '../data/types';
+// --- Use path aliases as defined in tsconfig.json ---
+import { ThemedText } from '@/components/themed-text';
+import { ThemedView } from '@/components/themed-view';
+import { storiesById } from '@/data/stories';
+import { Character, Message, MessageOption } from '@/data/types';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type DisplayMessage = Message & {
@@ -64,6 +73,9 @@ export default function StoryPlayerScreen() {
     DisplayMessage[]
   >([]);
 
+  const [storyEnded, setStoryEnded] = useState(false);
+  const tapOpacity = useRef(new Animated.Value(1)).current;
+
   const storyData = storyFile?.storyData[storyId as string];
   const characters = storyFile?.characters;
 
@@ -73,7 +85,7 @@ export default function StoryPlayerScreen() {
       : null;
 
   const currentOptions = currentMessage?.options ?? [];
-  const canAdvance = currentOptions.length === 0 && currentMessage?.next;
+  const canAdvance = currentOptions.length === 0 && !!currentMessage?.next;
 
   // Add the first message when the component loads
   React.useEffect(() => {
@@ -86,20 +98,49 @@ export default function StoryPlayerScreen() {
             character: characters[firstMessage.user],
           },
         ]);
+        // Check if the very first message is also the end
+        if (!firstMessage.next && !firstMessage.options) {
+          setStoryEnded(true);
+        }
       }
     }
   }, [currentMessageId, storyData, characters, displayedMessages.length]);
 
+  // Start blinking animation
+  useEffect(() => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(tapOpacity, {
+          toValue: 0.2,
+          duration: 700,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }),
+        Animated.timing(tapOpacity, {
+          toValue: 1,
+          duration: 700,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+  }, [tapOpacity]);
+
 
   const handleScreenTap = () => {
+    if (storyEnded) {
+      // If story ended, tap to go back
+      if (router.canGoBack()) {
+        router.back();
+      }
+      return;
+    }
+
     if (!canAdvance || !storyData || !characters || !currentMessage) {
       // If there are options, tap is disabled.
       // If there's no `next` message, story is over.
       if (!currentMessage?.next && !currentMessage?.options) {
-        // End of story, navigate back
-        if (router.canGoBack()) {
-          router.back();
-        }
+        setStoryEnded(true);
       }
       return;
     }
@@ -109,13 +150,20 @@ export default function StoryPlayerScreen() {
       const nextMessage = storyData.messageMap[nextMessageId];
       if (nextMessage) {
         setCurrentMessageId(nextMessageId);
+        // *** THIS IS THE FIX ***
+        // Add new messages to the START of the array for an inverted list
         setDisplayedMessages((prev) => [
-          ...prev,
           {
             ...nextMessage,
             character: characters[nextMessage.user],
           },
+          ...prev,
         ]);
+
+        // Check if this new message is the end
+        if (!nextMessage.next && !nextMessage.options) {
+          setStoryEnded(true);
+        }
       }
     }
   };
@@ -127,27 +175,38 @@ export default function StoryPlayerScreen() {
     const nextMessage = storyData.messageMap[nextMessageId];
     if (nextMessage) {
       setCurrentMessageId(nextMessageId);
+
+      const selfUserKey = Object.keys(characters).find(key => characters[key].isSelf) || '0';
+      const selfCharacter = Object.values(characters).find(c => c.isSelf) || characters[selfUserKey];
+
+      // *** THIS IS THE FIX ***
+      // Add new messages to the START of the array
       setDisplayedMessages((prev) => [
-        ...prev,
-        // Add the choice itself as a "self" message
-        {
-          _id: `choice-${nextMessageId}`,
-          text: option.text,
-          user: Object.keys(characters).find(key => characters[key].isSelf) || '0',
-          character: Object.values(characters).find(c => c.isSelf) || characters['0'],
-        },
-        // Add the next message in the story
         {
           ...nextMessage,
           character: characters[nextMessage.user],
         },
+        {
+          _id: `choice-${nextMessageId}`,
+          text: option.text,
+          user: selfUserKey,
+          character: selfCharacter,
+        },
+        ...prev,
       ]);
+
+      // Check if this new message is the end
+      if (!nextMessage.next && !nextMessage.options) {
+        setStoryEnded(true);
+      }
     }
   };
 
   if (!storyFile || !storyData || !characters) {
     return (
       <ThemedView style={styles.container}>
+        {/* Added Stack.Screen here to provide a back button even on error */}
+        <Stack.Screen options={{ title: 'Error', headerBackTitle: 'Back' }} />
         <ThemedText>Story not found!</ThemedText>
       </ThemedView>
     );
@@ -159,6 +218,7 @@ export default function StoryPlayerScreen() {
         styles.container,
         { paddingTop: insets.top, paddingBottom: insets.bottom },
       ]}>
+      {/* This controls the header for this screen */}
       <Stack.Screen options={{ title: storyFile.story.title, headerBackTitle: 'Back' }} />
 
       <Pressable onPress={handleScreenTap} style={styles.pressableArea}>
@@ -173,6 +233,17 @@ export default function StoryPlayerScreen() {
           inverted // This makes the list start from the bottom
           ListFooterComponent={<View style={{ height: 20 }} />} // Spacer at the "end" (top)
         />
+
+        {/* --- Footer Text --- */}
+        <ThemedView style={styles.footerContainer}>
+          {storyEnded ? (
+            <ThemedText style={styles.footerText}>The End</ThemedText>
+          ) : canAdvance ? (
+            <Animated.Text style={[styles.footerText, { opacity: tapOpacity }]}>
+              Tap to show next chat
+            </Animated.Text>
+          ) : null}
+        </ThemedView>
 
         {/* Options Area */}
         {currentOptions.length > 0 && (
@@ -290,7 +361,7 @@ const styles = StyleSheet.create({
   },
   optionsContainer: {
     padding: 20,
-    paddingBottom: 30, // Extra padding for home bar etc.
+    // paddingBottom: 30, // No longer needed, insets.bottom handles it
     borderTopWidth: 1,
     borderTopColor: '#E5E5EA',
   },
@@ -305,6 +376,19 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600',
+  },
+  footerContainer: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 40, // Give it some space
+    backgroundColor: 'transparent', // Inherit from parent
+  },
+  footerText: {
+    fontSize: 14,
+    color: '#8A8A8E', // System-like text color
+    fontStyle: 'italic',
   },
 });
 
