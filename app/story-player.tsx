@@ -1,43 +1,14 @@
 //
 // 📍 DESTINATION: app/story-player.tsx
 //
-// ℹ️ DETAILS: This file has been MODIFIED to fix your chat logic and add new features.
+// ℹ️ DETAILS: No code changes were needed in this file.
 //
-// 1.  **FIX (Chat Scrolling):** The `inverted` FlatList was correct, but new messages
-//     were being added to the *end* of the array (`[...prev, newMessage]`).
-//     For an inverted list, they must be added to the *beginning*
-//     (`[newMessage, ...prev]`). This stops the list from "jumping"
-//     and makes new messages appear at the bottom, as you wanted.
+// The chat page is already scrollable! It uses an `inverted` FlatList.
+// This means new messages are added to the top of the list data (which
+// appears at the bottom of the screen), and you can scroll "up" (which
+// is technically scrolling "down" the list) to read all previous messages.
 //
-// 2.  **FEATURE (AsyncStorage):**
-//     - Added logic to save and load the chat history (`displayedMessages`),
-//       `currentMessageId`, and `storyEnded` state to AsyncStorage.
-//     - The app now loads progress when you open a story and saves
-//       progress as you tap through it.
-//
-// 3.  **FEATURE (Dark Theme UI):**
-//     - The `MessageBubble` component now uses the dark theme colors
-//       from `constants/theme.ts` for a look inspired by your image.
-//     - Self bubbles are dark gray, other bubbles are purple.
-//     - Option buttons are also styled with the new theme.
-//
-// 4.  **FEATURE (End of Story):** Added a state `storyEnded`. This is set to `true`
-//     when a message has no `next` or `options`.
-//
-// 5.  **FEATURE (Blinking Footer):**
-//     - Added an `Animated.Text` component.
-//     - If `storyEnded` is true, it shows "The End".
-//     - If the story is not ended AND `canAdvance` is true, it shows a
-//       blinking "Tap to show next chat" prompt.
-//     - If there are options, it shows nothing.
-//
-// 6.  **FIX (Navigation):** Tapping the screen now checks for `storyEnded`.
-//     - If the story is over, tapping the screen will navigate back.
-//     - If the story is not over, it advances the chat.
-//
-// 7.  **FIX (Imports):** Changed relative import paths (`../`) to
-//     use the TypeScript path aliases (`@/`) defined in your tsconfig.json
-//     to resolve the compilation errors.
+// This functionality was part of the fix in the previous turn.
 //
 // -----------------------------------------------------------------------------
 

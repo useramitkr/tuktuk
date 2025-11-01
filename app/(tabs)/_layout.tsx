@@ -1,10 +1,22 @@
+//
+// 📍 DESTINATION: app/(tabs)/_layout.tsx
+//
+// ℹ️ DETAILS: This file has been MODIFIED.
+//
+// 1.  **FIX (Path Aliases):** Corrected all import paths
+//     to use the TypeScript path aliases (`@/`) defined in your `tsconfig.json`.
+//     The previous relative paths (`../../`) were incorrect.
+//
+// -----------------------------------------------------------------------------
+
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { HapticTab } from '../../components/haptic-tab'; // Corrected path
-import { IconSymbol } from '../../components/ui/icon-symbol'; // Corrected path
-import { Colors } from '../../constants/theme'; // Corrected path
-import { useColorScheme } from '../../hooks/use-color-scheme'; // Corrected path
+// --- FIX: Use path aliases ---
+import { HapticTab } from '@/components/haptic-tab';
+import { IconSymbol } from '@/components/ui/icon-symbol';
+import { Colors } from '@/constants/theme';
+import { useColorScheme } from '@/hooks/use-color-scheme';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme() ?? 'light';

@@ -1,9 +1,13 @@
 //
 // 📍 DESTINATION: app/_layout.tsx
 //
-// ℹ️ DETAILS: This file is MODIFIED from your original.
+// ℹ️ DETAILS: This file has been MODIFIED.
 //
-// 1.  **FIX (Back Button):** Changed `headerShown: false` to
+// 1.  **FIX (Path Alias):** Corrected the import path for `useColorScheme`
+//     to use the TypeScript path alias (`@/`) defined in your `tsconfig.json`.
+//     The previous relative path (`../`) was incorrect.
+//
+// 2.  **FIX (Back Button):** Changed `headerShown: false` to
 //     `headerShown: true` for the "story-player" screen.
 //
 // This allows the `<Stack.Screen>` options *inside* `story-player.tsx`
@@ -20,9 +24,8 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
-// ❗ FIX: Changed alias path (`@/hooks...`) to a relative path
-// (`../hooks...`) to fix bundler resolution errors.
-import { useColorScheme } from '../hooks/use-color-scheme';
+// --- FIX: Use the correct path alias ---
+import { useColorScheme } from '@/hooks/use-color-scheme';
 
 export const unstable_settings = {
   anchor: '(tabs)',
