@@ -8,6 +8,13 @@ import { Platform } from 'react-native';
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
+// Colors for the dark theme based on the user's image
+const darkBackground = '#121212';
+const darkBubbleSelf = '#373737';
+const darkBubbleOther = '#6A5AE0'; // A vibrant purple
+const darkCard = '#1C1C1E'; // Slightly lighter than bg
+const darkText = '#E0E0E0';
+
 export const Colors = {
   light: {
     text: '#11181C',
@@ -16,14 +23,30 @@ export const Colors = {
     icon: '#687076',
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
+    card: '#f8f8f8',
+    bubbleSelf: '#007AFF',
+    bubbleSelfText: '#FFFFFF',
+    bubbleOther: '#E5E5EA',
+    bubbleOtherText: '#000000',
+    bubbleSystemText: '#8A8A8E',
+    optionButton: '#007AFF',
+    optionButtonText: '#FFFFFF',
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
+    text: darkText,
+    background: darkBackground,
     tint: tintColorDark,
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
+    card: darkCard,
+    bubbleSelf: darkBubbleSelf,
+    bubbleSelfText: '#FFFFFF',
+    bubbleOther: darkBubbleOther,
+    bubbleOtherText: '#FFFFFF',
+    bubbleSystemText: '#8A8A8E',
+    optionButton: darkBubbleOther,
+    optionButtonText: '#FFFFFF',
   },
 };
 

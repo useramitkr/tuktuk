@@ -28,8 +28,11 @@ export interface MessageOption {
 
 export interface Message {
   _id: string;
-  user: string; // Corresponds to a key in the characters object
-  text: string;
+  // Some story JSON files use numeric keys for users (e.g. 0, 1).
+  // Accept both string and number here to match the JSON data.
+  user: string | number; // Corresponds to a key in the characters object
+  // Some messages carry only an image and no text. Make text optional.
+  text?: string;
   next?: string;
   image?: string;
   options?: MessageOption[];
