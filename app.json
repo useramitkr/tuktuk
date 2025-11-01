@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "tuktuk",
+    "name": "tuktuk story",
     "slug": "tuktuk",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,8 +8,11 @@
     "scheme": "tuktuk",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "owner": "amekr",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": "1.0.0",
+      "bundleIdentifier": "com.tuktuk.story"
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +22,12 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "com.google.android.gms.permission.AD_ID"
+      ],
+      "versionCode": 1,
+      "package": "com.tuktuk.story"
     },
     "web": {
       "output": "static",
@@ -43,6 +51,14 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "assetBundlePatterns": [
+      "assets/images/*",
+      "assets/fonts/*"
+    ],
+    "updates": {
+      "fallbackToCacheTimeout": 0
     }
   }
 }
+
