@@ -16,6 +16,7 @@ import { ThemedText } from '../../components/themed-text';
 import ParallaxScrollView from '../../components/parallax-scroll-view';
 import { allStories, CATEGORIES } from '../../data/stories';
 import { Story } from '../../data/types';
+import { BannerAdComponent } from '@/components/gAds/BannerAd';
 
 const { width } = Dimensions.get('window');
 const trendingItemWidth = width * 0.7; // 70% of screen width
@@ -60,6 +61,7 @@ export default function HomeScreen() {
       asChild>
       <TouchableOpacity style={styles.storyRow}>
         <Image source={{ uri: item.image }} style={styles.storyRowImage} />
+        {/* <BannerAdComponent /> */}
         <View style={styles.storyRowTextContainer}>
           <ThemedText type="defaultSemiBold" style={styles.storyRowTitle}>
             {item.title}

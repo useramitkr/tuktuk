@@ -24,7 +24,8 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "permissions": [
-        "com.google.android.gms.permission.AD_ID"
+        "com.google.android.gms.permission.AD_ID",
+        "android.permission.INTERNET"
       ],
       "versionCode": 1,
       "package": "com.tuktuk.story"
@@ -38,8 +39,8 @@
       [
         "react-native-google-mobile-ads",
         {
-          "androidAppId": "ca-app-pub-3010808812913571~8656173345",
-          "iosAppId": "ca-app-pub-12345678910~123456459"
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
         }
       ],
       [
@@ -65,6 +66,13 @@
     ],
     "updates": {
       "fallbackToCacheTimeout": 0
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "5aea7fd1-6d5d-424f-9744-c783367113fd"
+      }
     }
   }
 }
+
